@@ -1,0 +1,18 @@
+{
+  "name": "web3.js-1403",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "cobalt-deploy -g 5000000 -f 0x00ea169ce7e0992960d3bde6f5d539c955316432 -s DemoContract.sol"
+  },
+  "author": "jchen86 <jchen.tc@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@appliedblockchain/cobalt": "^0.8.0"
+  },
+  "dependencies": {
+    "web3": "^1.0.0-beta.33"
+  }
+}

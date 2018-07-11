@@ -1,0 +1,32 @@
+[
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "emitTrue",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "emitFalse",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "value",
+        "type": "bool"
+      }
+    ],
+    "name": "BooleanEvent",
+    "type": "event"
+  }
+]
