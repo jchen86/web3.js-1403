@@ -33,3 +33,30 @@ contract.methods.emitFalse()
     process.exit(0)
   })
 ```
+
+## Cause
+packages/web3-eth-abi/src/index.js
+```javascript
+...
+ABICoder.prototype.decodeLog = function (inputs, data, topics)
+...
+  // given return value is a non indexed param with a false boolean value
+  inputs.forEach(function (res, i) {
+      // res.type == boolean, returnValue set to null
+      returnValue[i] = (res.type === 'string') ? '' : null;
+
+      // param value is false => condition evaluates to false 
+      if (notIndexedParams[i] !== undefined) {
+          returnValue[i] = notIndexedParams[i];
+      }
+      // condition evaluates to false
+      if (indexedParams[i] !== undefined) {
+          returnValue[i] = indexedParams[i];
+      }
+
+      if(res.name) {
+          // returnValue[i] == null
+          returnValue[res.name] = returnValue[i];
+      }
+...
+```
